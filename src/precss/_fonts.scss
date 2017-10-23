@@ -1,0 +1,26 @@
+@font-face {
+    font-family:'Bariol';
+    src: url('../font/Bariol_Regular.otf');
+    src: url('../font/Bariol_Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Bariol';
+    src: url('../font/Bariol_Regular_Italic.otf');
+    src: url('../font/Bariol_Regular_Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+%regular {
+    font-family: 'Bariol', sans-serif;
+}
+
+%italic{
+    font-family: 'Bariol', sans-serif;
+    font-style: italic;
+}
+

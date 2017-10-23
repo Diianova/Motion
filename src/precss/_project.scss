@@ -1,0 +1,388 @@
+//The main colors of the page
+$color_black: #232324;
+$color_green: #6cc372;
+$color_grey-lt: #f0f0f0;
+$color_grey: #616161;
+$color_red: #eb4f4e;
+
+@include reset();
+
+.container{
+    @include wrapper();
+}
+
+// .sm-debug{
+//     @include debug(rgba(0, 0, 0, 0.5), 1px solid #ff0);
+// }
+
+h2, .h2{
+    @extend %regular;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h2{
+    letter-spacing: 5px;
+}
+
+.h2sub{
+    @extend %regular;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.profit{
+    padding: 15px 0;
+    background: $color_black;
+
+    h2{
+        color: #fff;
+    }
+
+    .h2sub{
+        color: $color_red;
+    }
+
+    &__items{
+        @include row-flex();
+        justify-content: space-around;
+
+        .item{
+            @include col();
+            @include size(6);
+            @include size-md(12);
+            @include size-sm(12);
+            @include size-xs(20);
+
+            @extend %regular;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+
+            &__img{
+                border-radius: 50%;
+            }
+
+            &__subtitle{
+                margin: 3px 0;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+
+            &__text{
+                font-size: 16px;
+                color: #d94948;
+            }
+        }
+    }
+}
+
+.humans{
+    background: $color_green;
+    padding: 10px 0;
+
+    h2{
+        color: $color_black;
+        @include sm-block{
+            font-size: 2rem;
+        }
+    }
+
+    .h2sub{
+        color: #fff;
+    }
+
+    &__items{
+        @include row-flex();
+        justify-content: center;
+
+        .item{
+            @include col();
+            @include size(6);
+            @include size-sm(12);
+            @include size-xs(20);
+            @include size-xxs(24);
+
+            @extend %regular;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background: #fff;
+
+            @include xs-block{
+                display: block;
+                font-size: 20px;
+                background: #eee;
+            }
+
+            &__img{
+                margin: 10px auto;
+                width: 90%;
+            }
+
+            &__subtitle{
+                margin: 10px 0;
+                font-size: 1.5em;
+                color: #6cc372;
+            }
+
+            &__job{
+                margin: auto 10px 10px 10px;
+                font-size: 1em;
+                color: $color_red;
+            }
+
+            &__follow{
+                position: relative;
+                padding: 5px;
+                border-radius: 5px;
+                background: #6cc372;
+                font-size: 1.5em;
+                color: #fff;
+                cursor: pointer;
+                i{
+                    position: absolute;
+                    left: 15px;
+                }
+            }
+        }
+    }
+}
+
+.portfolio{
+    padding: 10px 0 210px;
+    background: $color_grey-lt;
+    @include sm-block{
+        padding-bottom: 170px;
+    }
+
+    h2{
+        color: $color_grey;
+    }
+
+    .h2sub{
+        color: $color_green;
+    }
+
+    &__items{
+        @include row-flex();
+        justify-content: space-around;
+
+        .item{
+            @include col();
+            @include size(5);
+            @include size-md(6);
+            @include size-sm(12);
+            @include size-xs(20);
+            @include size-xxs(24)
+
+            @extend %regular;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 20px;
+
+            &__img{
+                margin: 10px auto;
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            &__txt{
+                color: $color_black;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+hr{
+    border: none;
+    margin-top: 0;
+    margin-bottom: 1px;
+    position: relative;
+    z-index: 2;
+    color: #d8d8d8;
+    background-color: #d8d8d8;
+    height: 1px;
+}
+
+.pricing{
+    margin-top: -160px;
+    @include md-block{
+        margin-top: -149px;
+    }
+    @include sm-block{
+        margin-top: -120px;
+    }
+
+    .h2{
+        color: $color_grey;
+        @include md-block{
+            font-size: 1.8rem;
+        }
+        @include sm-block{
+            font-size: 1.5rem;
+        }
+    }
+
+    .h2sub{
+        color: $color_red;
+    }
+
+    &__items{
+        @include row-flex();
+        align-items: flex-end;
+        justify-content: center;
+
+        .item{
+            @include col();
+            @include size(8);
+            @include size-sm(20);
+            @include size-xs(20);
+            @include size-xxs(20);
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 10px;
+
+            &:nth-child(even){
+                .h2{
+                    color: $color_red;
+                }
+                .h2sub{
+                    color: $color_grey;
+                }
+                .price{
+                    background: $color_red;
+                }
+            }
+            &:nth-child(n+2){
+                .title{
+                    @include sm-block{
+                        border: 1px solid #d8d8d8;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+                }
+            }
+
+            .title{
+                padding: 0 30px;
+                overflow: hidden;
+                background: #fff;
+            }
+
+            .plan{
+                @extend %regular;
+                font-size: 18px;
+                color: $color_grey;
+                &__item{
+                    padding: 15px 0;
+                    border-top: 1px solid #fff;
+                    border-bottom: 1px solid #d8d8d8;
+                    background: $color_grey-lt;
+                }
+            }
+
+            .price{
+                padding: 10px 50px;
+                position: relative;
+                text-align: left;
+                background: $color_grey;
+                color: #fff;
+                @include md-block{
+                    padding: 10px 15px;
+                }
+                @include sm-block{
+                    padding: 10px 100px;
+                }
+                @include xs-block{
+                    padding: 10px 50px;
+                }
+                @include xxs-block{
+                    padding: 10px 15px;
+                }
+
+                &__cur{
+                    font-size: 1.5em;
+                    vertical-align: 0%;
+                }
+
+                &__val{
+                    font-size: 3em;
+                    vertical-align: middle;
+                }
+
+                &__per{
+                    font-size: 1.2em;
+                    margin-top: 10px;
+                    vertical-align: -50%;
+                }
+
+                &__btn{
+                    position: absolute;
+                    right: 50px;
+                    top: 25px;
+                    padding: 5px 20px;
+                    border-radius: 2px;
+                    color: $color_black;
+                    text-decoration: none;
+                    background: #fff;
+                    @include md-block{
+                        right: 15px;
+                    }
+                    @include sm-block{
+                        right: 100px;
+                    }
+                    @include xs-block{
+                        right: 50px;
+                    }
+                    @include xxs-block{
+                        right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    .items{
+        @include row-flex();
+
+        .item{
+            @include col();
+            @include size(8);
+            @include size-sm(24);
+
+            min-height: 200px;
+            background: #aaa;
+
+            .row{
+                @include row-flex();
+
+                div{
+                    @include col();
+                    @include size(24);
+                    @include size-sm(8);
+                    @include size-xs(24);
+
+
+                    margin-bottom: 5px;
+                    adding: 5px;
+                    background: #f50;
+                }
+            }
+        }
+    }
+}
