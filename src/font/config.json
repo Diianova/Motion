@@ -17,6 +17,18 @@
       "css": "cog",
       "code": 59392,
       "src": "fontawesome"
+    },
+    {
+      "uid": "bc50457410acf467b8b5721240768742",
+      "css": "facebook",
+      "code": 62220,
+      "src": "entypo"
+    },
+    {
+      "uid": "3e617d8049807e128c80d0344ba09e37",
+      "css": "rss",
+      "code": 59394,
+      "src": "entypo"
     }
   ]
 }
