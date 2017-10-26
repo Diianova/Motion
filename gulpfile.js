@@ -1,20 +1,21 @@
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var sourcemaps = require('gulp-sourcemaps');
-var gcmq = require('gulp-group-css-media-queries');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const browserSync = require('browser-sync').create();
+const sourcemaps = require('gulp-sourcemaps');
+const gcmq = require('gulp-group-css-media-queries');
+const sass = require('gulp-sass');
+
 
 var config = {
-	src: './src/',
+	src: './src',
 	html: {
-		src: '*.html'
+		src: '/index.html'
 	},
 	css: {
-		watch: 'precss/**/*.scss',
-		src: 'precss/styles.scss',
-		dest: 'css'
+		watch: '/precss/**/*.scss',
+		src: '/precss/styles.scss',
+		dest: '/css'
 	}
 };
 
