@@ -217,6 +217,7 @@ h2{
             width: 56%;
             height: auto;
             z-index: 50;
+            transition: 2s cubic-bezier(0, 0, .58, 1);
 
             &_main-pos{
                 left: 50%;
@@ -231,6 +232,36 @@ h2{
             &_left-pos{
                 left: 0;
             }
+        }
+    }
+
+    .button{
+        position: absolute;
+        top: 40%;
+        font-size: 2.5rem;
+        color: #fc918f;
+        cursor: pointer;
+        &_prev{
+            left: -5rem;
+            @media screen and (max-width: 1150px){
+                left: 0%;
+            }
+        }
+        &_next{
+            right: -5rem;
+            @media screen and (max-width: 1150px){
+                right: 0%;
+            }
+        }
+        @media screen and (max-width: 1150px){
+            z-index: 1000;
+            color: $color_red;
+        }
+        @include xs-block{
+            font-size: 1rem;
+        }
+        @include xxs-block{
+            top: 35%;
         }
     }
 }
@@ -484,6 +515,7 @@ hr{
             }
 
             .title{
+                position: relative;
                 padding: 0 30px;
                 overflow: hidden;
                 background: #fff;
@@ -491,8 +523,19 @@ hr{
 
             .plan{
                 @extend %regular;
+                position: relative;
                 font-size: 18px;
                 color: $color_grey;
+
+                &__icon{
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    margin-left: -23px;
+                    font-size: 35px;
+                    z-index: 100;
+                    color: $color_red;
+                }
                 &__item{
                     padding: 15px 0;
                     border-top: 1px solid #fff;
@@ -635,7 +678,13 @@ footer{
             text-align: center;
             border-radius: 6px;
             background: $color_red;
+            color: #fff;
             font-size: 20px;
+            transition: all .5s;
+            &:hover{
+                color: $color_black;
+                background: #eb4747;
+            }
         }
     }
 }
