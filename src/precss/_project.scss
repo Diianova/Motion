@@ -613,18 +613,32 @@ hr{
     h2{
         color: #fff;
     }
-    i{
+    &__icon{
         margin: 20px 0px;
         display: block;
         text-align: center;
         font-size: 34px;
         color: #fff;
     }
-    &__items{
+}
+
+.slider{
+    position: relative;
+    @media screen and (max-width: 1170px){
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__slides{
         @include row-flex();
         margin: 20px 0 30px;
+        min-height: 100px;
 
-        .item{
+        .tweet-slid{
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+
             @include col();
             @include size(24);
 
@@ -633,6 +647,68 @@ hr{
 
             span{
                 color: #fff;
+            }
+        }
+        .showed{
+            opacity: 1;
+        }
+    }
+    &__btn{
+        position: absolute;
+        top: -45%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $color_black;
+        color: #fff;
+        cursor: pointer;
+        transition: all .3s;
+        @include md-block{
+            top: -35%;
+        }
+        @include sm-block{
+            top: -30%;
+        }
+        @include xs-block{
+            top: -25%;
+        }
+        @include xxs-block{
+            top: 10%;
+            width: 30px;
+            height: 30px;
+        }
+        &::before{
+            position: absolute;
+            top: 30%;
+            @include xs-block{
+                top: 25%;
+            }
+        }
+        &:hover{
+            color: #eb4f4e;
+        }
+        &_prev{
+            left: -10%;
+            @include xxs-block{
+                left: -15%;
+            }
+            &::before{
+                left: 15%;
+                @include xs-block{
+                    left: 10%;
+                }
+            }
+        }
+        &_next{
+            right: -10%;
+            @include xxs-block{
+                right: -15%;
+            }
+            &::before{
+                right: 20%;
+                @include xs-block{
+                    right: 15%;
+                }
             }
         }
     }

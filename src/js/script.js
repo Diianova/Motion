@@ -11,23 +11,35 @@
 	});
 
 	//Slaider for main banner
-	var sl = new Slider('.carousel__item');
-
+	var carousel = new Carousel('.carousel__item');
     var btn_prev = document.querySelector('.button_prev');
     var btn_next = document.querySelector('.button_next');
 
     btn_prev.onclick = function () {
-        sl.prev();
+        carousel.prev();
     }
 
     btn_next.onclick = function () {
-        sl.next();
+        carousel.next();
+    }
+
+   	// Slaider for tweets
+    var slider = new Slider('.tweet-slid');
+    var prevBtn = document.querySelector('.slider__btn_prev');
+    var nextBtn = document.querySelector('.slider__btn_next');
+
+    prevBtn.onclick = function () {
+        slider.prev();
+    }
+
+    nextBtn.onclick = function () {
+        slider.next();
     }
 
 })();
 
 
-function Slider(img) {
+function Carousel(img) {
     this.images = document.querySelectorAll(img);
     this.i = 1;
 
@@ -82,5 +94,32 @@ function Slider(img) {
         	this.images[this.i-2].style.right="0";
         	this.images[this.i-2].style.left="auto";
         }
+    }
+}
+
+function Slider(slides) {
+    this.slides = document.querySelectorAll(slides);
+    this.i = 0;
+
+    this.prev = function () {
+        this.slides[this.i].classList.remove('showed');
+        this.i--;
+
+        if (this.i < 0) {
+            this.i = this.slides.length - 1;
+        }
+
+        this.slides[this.i].classList.add('showed');
+    }
+
+    this.next = function () {
+        this.slides[this.i].classList.remove('showed');
+        this.i++;
+
+        if (this.i >= this.slides.length) {
+            this.i = 0;
+        }
+
+        this.slides[this.i].classList.add('showed');
     }
 }
